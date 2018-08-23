@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="coreApi:jar">
+    <output-path>$PROJECT_DIR$/build/artifacts/coreApi_jar</output-path>
+    <root id="archive" name="coreApi.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/build/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="Start" />
+      <element id="module-output" name="WebServer" />
+      <element id="module-output" name="Api" />
+      <element id="module-output" name="FileSystem" />
+      <element id="module-output" name="ExceptionLogger" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-jupiter-api-5.3.0-RC1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
