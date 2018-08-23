@@ -1,0 +1,140 @@
+
+.main {
+    margin: auto;
+    width: 85%;
+
+    padding: 10px;
+    min-width: 300px;
+    overflow: auto;
+}
+.title {
+    margin-top: 5px;
+}
+.all-items {
+    float: left;
+    margin-right: 20px;
+}
+
+.header {
+    margin: auto;
+    width: 225;
+}
+
+.selected-items {
+    margin-bottom: 10px;
+    border: 1px solid black;
+    max-width: 250px;
+    float: left;
+}
+
+.arrow {
+    background-image: url("../img/arrow.png");
+    background-position: 8px 8px;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.selector {
+    margin-bottom : 10px;
+}
+.craft-details {
+    max-width: 200px;
+    margin: auto;
+    overflow: auto;
+    margin-top: 5px;
+}
+
+.craft-time {
+    width: 100px;
+    float: left;
+}
+
+.craft-amount {
+    width: 100px;
+    float: right;
+    text-align: right;
+}
+
+.recipe {
+    margin-top: 10px;
+    margin-bottom: 15px
+}
+
+.recipe-header {
+    text-align: center;
+}
+
+.recipe-list {
+    margin : auto;
+    width: 200px;
+    overflow: auto;
+}
+
+.recipe-item {
+    float: left;
+    width: 100px;
+}
+.recipe-amount{
+    float: right;
+    width 100px;
+    text-align: right;
+}
+
+.support {
+    margin: auto;
+    border: 1px solid black;
+    max-width: 250px;
+    margin-bottom: 5px;
+}
+
+.support-list {
+    float: left;
+    margin-bottom: 10px;
+}
+
+.results {
+    margin: auto;
+    display: none;
+    overflow: auto;
+    max-width: 505px;
+}
+
+@media only screen and (max-width: 610px) {
+    .arrow {
+        display: none;
+    }
+    .selected-items {
+        margin-right: 10px;
+    }
+    .results {
+        max-width: 210px;
+    }
+}
+.rate-checker {
+    margin: auto;
+    width: 335px;
+    display: none;
+}
+
+.item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-left: 1px solid black;
+    padding-left: 5px;
+}
+.item-amount-list{
+    margin: auto;
+    max-width: 600px;
+    margin-top: 20px;
+    border: 1px solid black;
+    display: none;
+}

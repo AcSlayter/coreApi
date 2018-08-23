@@ -1,0 +1,63 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="icon" href="favicon.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119552003-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119552003-1');
+    </script>
+
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <div class="all-items"> All items </div>
+
+        <select id="item-list" class="selector">
+            <!--populated using JS-->
+        </select>
+    </div>
+    <div id="results" class="results">
+        <div id="selected-item-details" class="selected-items">
+            <div id="item-name" class="title center"> item name </div>
+            <div class="craft-details">
+                <div id="craft-time" class="craft-time"> 0 second </div>
+                <div id="craft-amount" class="craft-amount"> 5 items</div>
+            </div>
+            <div class="recipe">
+                <div class="recipe-header"> Item ingredients </div>
+                <div id="recipe-list" class="recipe-list">
+
+                </div>
+            </div>
+        </div>
+        <div class="arrow"></div>
+        <div id="support-list" class="support-list">
+        </div>
+
+
+    </div>
+    <div id="rate-checker" class="rate-checker">
+        Quantity :
+        <input id="amount" type="number"  min="1" max="100" step="1" value="5">
+        Seconds :
+        <input id="second" type="number"  min="1" max="100" step="1" value="1">
+        <input id="submit" type="submit">
+    </div>
+    <div id="item-amount-list" class="item-amount-list">
+
+    </div>
+
+</div>
+
+</body>
+
+<script src="js/pageload.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</html>
