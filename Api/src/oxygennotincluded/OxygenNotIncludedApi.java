@@ -20,7 +20,7 @@ public class OxygenNotIncludedApi implements IApi {
         String subArray = getSubArray(requestURL);
 
         if(subArray.contains("getNames")) {
-            return AllRecourses.getAllItemNamesJSON();
+            return AllRecourses.getAllItemMachineJSON();
         }
         throw new InvalidApiRequestException();
     }

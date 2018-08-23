@@ -1,6 +1,6 @@
 package oxygennotincluded.endpoint;
 
-import oxygennotincluded.dataobject.Names;
+import oxygennotincluded.dataobject.gameitems.Machine;
 
 /**
  * Created by aaron on 7/31/2018.
@@ -9,11 +9,11 @@ public class AllRecourses {
 
 
 
-    public static byte[] getAllItemNamesJSON() {
-            Names[] values = Names.values();
+    public static byte[] getAllItemMachineJSON() {
+            Machine[] values = Machine.values();
 
             String list = "";
-            for ( Names name : values) {
+            for ( Machine name : values) {
                 if(list.equals("")){
                     list = "\"" + name.toString() + "\"";
                 } else {
@@ -21,8 +21,8 @@ public class AllRecourses {
                 }
             }
 
-            String names =  "{ \"name_key\" : ["+ list + "] }";
-            byte[] item = names.getBytes();
+            String Machine =  "{ \"name_key\" : ["+ list + "] }";
+            byte[] item = Machine.getBytes();
 
             return item;
     }
