@@ -5,3 +5,6 @@ ErrorOccurred=exception.InvalidApiRequestException: exception.PlayerNotFound: Pl
 ErrorOccurred=exception.InvalidApiRequestException: exception.PlayerNotFound: Player : bee Not Found, startingPoint=munchkin.MunchkinApi.getByteResponse(MunchkinApi.java:31), additionalInfo=/api/Munchkin/levelUp/bee/3, remoteSocket=/0:0:0:0:0:0:0:1:54245
 ErrorOccurred=exception.ApiNotFoundException: Api Not Found : levelUp, startingPoint=ApiAssigner.getApi(ApiAssigner.java:30), additionalInfo=/apiMunchkin/levelUp/Aaron/-1?_=1527641013651, remoteSocket=/0:0:0:0:0:0:0:1:65427
 ErrorOccurred=exception.ApiNotFoundException: Api Not Found : levelUp, startingPoint=ApiAssigner.getApi(ApiAssigner.java:30), additionalInfo=/apiMunchkin/levelUp/Aaron/1?_=1527641024670, remoteSocket=/0:0:0:0:0:0:0:1:65446
+ErrorOccurred=exception.ReadFileException: File not Available, startingPoint=FileSystemFile.readAllBytes(FileSystemFile.java:28), additionalInfo=/favicon.ico, remoteSocket=/0:0:0:0:0:0:0:1:53932
+ErrorOccurred=exception.ReadFileException: File not Available, startingPoint=FileSystemFile.readAllBytes(FileSystemFile.java:28), additionalInfo=/Error.csv, remoteSocket=/0:0:0:0:0:0:0:1:53947
+ErrorOccurred=exception.ReadFileException: File not Available, startingPoint=FileSystemFile.readAllBytes(FileSystemFile.java:28), additionalInfo=/favicon.ico, remoteSocket=/0:0:0:0:0:0:0:1:53948
