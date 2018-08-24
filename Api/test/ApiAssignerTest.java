@@ -1,9 +1,8 @@
 import exception.ApiNotFoundException;
 import exception.ParameterApiNameNotPassed;
 import factorio.FactorioApi;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by aaron on 5/27/2018.
@@ -18,7 +17,8 @@ class ApiAssignerTest {
         } catch (Exception e){
             hasException = true;
         }
-        assertFalse(hasException);
+        Assertions.assertFalse(hasException);
+
     }
 
     @Test
@@ -32,7 +32,7 @@ class ApiAssignerTest {
         } catch (Exception e){
             hasException = false;
         }
-        assertTrue(hasException);
+        Assertions.assertTrue(hasException);
     }
 
     @Test
@@ -46,7 +46,7 @@ class ApiAssignerTest {
         } catch (Exception e){
             hasException = false;
         }
-        assertTrue(hasException);
+        Assertions.assertTrue(hasException);
     }
 
     @Test
@@ -54,9 +54,9 @@ class ApiAssignerTest {
         ApiAssigner apiAssigner = new ApiAssigner();
         try {
             Object name = apiAssigner.getApi("Factorio");
-            assertEquals( name.getClass(), FactorioApi.class);
+            Assertions.assertEquals( name.getClass(), FactorioApi.class);
         } catch (ApiNotFoundException e) {
-            fail("exception");
+            Assertions.fail("exception");
         }
     }
 
@@ -67,11 +67,11 @@ class ApiAssignerTest {
         ApiAssigner apiAssigner = new ApiAssigner();
         try {
             Object name = apiAssigner.getApi("fail");
-            assertEquals( name.getClass(), FactorioApi.class);
+            Assertions.assertEquals( name.getClass(), FactorioApi.class);
         } catch (ApiNotFoundException e) {
             hasException = true;
         }
-        assertTrue(hasException);
+        Assertions.assertTrue(hasException);
     }
 
 }

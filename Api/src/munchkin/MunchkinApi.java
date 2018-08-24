@@ -16,7 +16,7 @@ public class MunchkinApi implements IApi {
     @Override
     public byte[] getByteResponse(String requestURL) throws InvalidApiRequestException {
 
-        String subArray = getSubArray(requestURL);
+        String subArray = getSubArray(requestURL, NAME);
 
         if(subArray.contains("getUserData")){
             return currentPlayers.getAllUsersJson();
@@ -41,14 +41,14 @@ public class MunchkinApi implements IApi {
         return split[i+1].split("\\?")[0];
     }
 
-    @Override
-    public String getSubArray(String requestURL) {
-        String[] pullingApartApi = requestURL.split(NAME);
 
-        if(pullingApartApi.length > 1 ){
-            return pullingApartApi[1];
-        }
-
-        return "";
-    }
+//    public String getSubArray(String requestURL, String Name) {
+//        String[] pullingApartApi = requestURL.split(NAME);
+//
+//        if(pullingApartApi.length > 1 ){
+//            return pullingApartApi[1];
+//        }
+//
+//        return "";
+//    }
 }

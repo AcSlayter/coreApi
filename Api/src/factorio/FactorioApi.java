@@ -19,12 +19,9 @@ public class FactorioApi implements IApi {
         this.itemRecipeRetriever = new ItemRecipeRetriever();
 
     }
-    public String getSubArray(String requestURL) {
-        return requestURL.split(NAME)[1];
-    }
 
     public byte[] getByteResponse (String arguments) throws InvalidApiRequestException {
-        String subArray = getSubArray(arguments);
+        String subArray = getSubArray(arguments, NAME);
 
         if(subArray.contains("getNames")) {
             return namesRetreiver.getAllItemNamesJSON();

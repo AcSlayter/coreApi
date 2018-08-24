@@ -10,29 +10,13 @@ import oxygennotincluded.endpoint.AllRecourses;
 public class OxygenNotIncludedApi implements IApi {
     public static final String NAME = "OxygenNotIncluded";
 
-    public OxygenNotIncludedApi(){
-
-    }
-
-
     @Override
     public byte[] getByteResponse(String requestURL) throws InvalidApiRequestException {
-        String subArray = getSubArray(requestURL);
+        String subArray = getSubArray(requestURL, NAME);
 
         if(subArray.contains("getNames")) {
             return AllRecourses.getAllItemMachineJSON();
         }
         throw new InvalidApiRequestException();
-    }
-
-    @Override
-    public String getSubArray(String requestURL) {
-        String[] pullingApartApi = requestURL.split(NAME);
-
-        if(pullingApartApi.length > 1 ){
-            return pullingApartApi[1];
-        }
-
-        return "";
     }
 }
