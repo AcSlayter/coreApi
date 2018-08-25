@@ -3,7 +3,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Test {
+public class Config {
     public static void main(String[] args) {
         try {
 //             Properties defaultProps = new Properties();
@@ -20,15 +20,19 @@ public class Test {
 
     }
 
-    private static void SaveData(Properties applicationProps) throws IOException {
-        FileOutputStream out = new FileOutputStream("appProperties");
-        applicationProps.store(out, "---No Comment---");
-        out.close();
+    public static void SaveData(Properties applicationProps) {
+        try {
+            FileOutputStream out = new FileOutputStream("app.Properties.data");
+            applicationProps.store(out, "---No Comment---");
+            out.close();
+        }catch (Exception e){
+
+        }
     }
 
-    private static Properties getProperties() throws IOException {
+    public static Properties getProperties() throws IOException {
         Properties defaultProps = new Properties();
-        FileInputStream in = new FileInputStream("appProperties");
+        FileInputStream in = new FileInputStream("app.Properties.data");
         defaultProps.load(in);
         in.close();
         return defaultProps;

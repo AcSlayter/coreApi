@@ -8,3 +8,4 @@ ErrorOccurred=exception.ApiNotFoundException: Api Not Found : levelUp, startingP
 ErrorOccurred=exception.ReadFileException: File not Available, startingPoint=FileSystemFile.readAllBytes(FileSystemFile.java:28), additionalInfo=/favicon.ico, remoteSocket=/0:0:0:0:0:0:0:1:53932
 ErrorOccurred=exception.ReadFileException: File not Available, startingPoint=FileSystemFile.readAllBytes(FileSystemFile.java:28), additionalInfo=/Error.csv, remoteSocket=/0:0:0:0:0:0:0:1:53947
 ErrorOccurred=exception.ReadFileException: File not Available, startingPoint=FileSystemFile.readAllBytes(FileSystemFile.java:28), additionalInfo=/favicon.ico, remoteSocket=/0:0:0:0:0:0:0:1:53948
+ErrorOccurred=exception.ReadFileException: File not Available, startingPoint=FileSystemFile.readAllBytes(FileSystemFile.java:28), additionalInfo=/favicon.ico, remoteSocket=/0:0:0:0:0:0:0:1:59132
