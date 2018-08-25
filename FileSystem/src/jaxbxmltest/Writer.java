@@ -1,3 +1,7 @@
+package jaxbxmltest;
+
+import jaxbxmltest.Customer;
+
 import java.io.File;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
