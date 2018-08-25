@@ -37,3 +37,5 @@ public class Customer {
     }
 
 }
+
+//https://docs.oracle.com/javase/tutorial/essential/environment/properties.html
