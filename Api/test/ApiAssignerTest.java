@@ -1,5 +1,5 @@
-import exception.ApiNotFoundException;
-import exception.ParameterApiNameNotPassed;
+import com.exception.ApiNotFoundException;
+import com.exception.ParameterApiNameNotPassed;
 import factorio.FactorioApi;
 import org.junit.jupiter.api.*;
 

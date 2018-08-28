@@ -1,6 +1,6 @@
 package oxygennotincluded;
 
-import exception.InvalidApiRequestException;
+import com.exception.InvalidApiRequestException;
 import interphase.IApi;
 import oxygennotincluded.endpoint.AllRecourses;
 

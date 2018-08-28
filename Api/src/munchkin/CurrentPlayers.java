@@ -1,6 +1,6 @@
 package munchkin;
 
-import exception.PlayerNotFound;
+import com.exception.PlayerNotFound;
 import munchkin.datacontainers.Player;
 
 import java.util.ArrayList;

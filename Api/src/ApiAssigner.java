@@ -1,4 +1,5 @@
-import exception.*;
+import com.ApiHandler;
+import com.exception.*;
 import factorio.FactorioApi;
 import interphase.IApi;
 import munchkin.MunchkinApi;
@@ -7,7 +8,7 @@ import oxygennotincluded.OxygenNotIncludedApi;
 /**
  * Created by aaron on 5/27/2018.
  */
-public class ApiAssigner {
+public class ApiAssigner extends ApiHandler {
     private FactorioApi factorioApi;
     private MunchkinApi munchkinApi;
 

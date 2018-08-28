@@ -1,7 +1,7 @@
 package munchkin;
 
-import exception.InvalidApiRequestException;
-import exception.PlayerNotFound;
+import com.exception.InvalidApiRequestException;
+import com.exception.PlayerNotFound;
 import interphase.IApi;
 
 /**

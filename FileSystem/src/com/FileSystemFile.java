@@ -1,4 +1,6 @@
-import exception.ReadFileException;
+package com;
+
+import com.exception.ReadFileException;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

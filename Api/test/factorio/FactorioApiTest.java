@@ -33,7 +33,7 @@ class FactorioApiTest {
             FactorioApi factorioApi = new FactorioApi();
             factorioApi.getByteResponse("/api/Factorio/getNames.json");
         } catch (Exception e) {
-            Assertions.fail("caught exception");
+            Assertions.fail("caught com.exception");
         }
     }
     @Test
@@ -42,7 +42,7 @@ class FactorioApiTest {
             FactorioApi factorioApi = new FactorioApi();
             factorioApi.getSubArray("/api/Factorio/getItemRecipe/Copper_plate", "Factorio" );
         } catch (Exception e) {
-            Assertions.fail("caught exception");
+            Assertions.fail("caught com.exception");
         }
     }
     @Test
@@ -51,7 +51,7 @@ class FactorioApiTest {
             FactorioApi factorioApi = new FactorioApi();
             factorioApi.getSubArray("/api/Factorio/getBreakDown.json", "Factorio" );
         } catch (Exception e) {
-            Assertions.fail("caught exception");
+            Assertions.fail("caught com.exception");
         }
     }
 
