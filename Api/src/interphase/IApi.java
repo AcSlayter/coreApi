@@ -1,6 +1,6 @@
 package interphase;
 
-import exception.InvalidApiRequestException;
+import com.exception.InvalidApiRequestException;
 
 /**
  * Created by aaron on 5/27/2018.

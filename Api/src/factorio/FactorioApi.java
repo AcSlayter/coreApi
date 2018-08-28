@@ -1,6 +1,6 @@
 package factorio;
 
-import exception.InvalidApiRequestException;
+import com.exception.InvalidApiRequestException;
 import factorio.endpoint.ItemRecipeRetriever;
 import factorio.endpoint.NamesRetreiver;
 import interphase.IApi;

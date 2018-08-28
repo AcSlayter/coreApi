@@ -1,4 +1,6 @@
-import helper.RequestInfo;
+package com;
+
+import com.helper.RequestInfo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,17 +15,18 @@ public class ConnectionHandler implements Runnable {
 
     private final Socket socket;
     private String rootDir;
-    private ApiAssigner apiAssigner;
+    private ApiHandler apiHandler;
     private LOGGER logger = new LOGGER("logs/Error.csv", false);
 
-    public ConnectionHandler(Socket local_socket, String rootDirectory, ApiAssigner apiassigner){
+    public ConnectionHandler(Socket local_socket, String rootDirectory,ApiHandler apiHandler){
         this.socket = local_socket;
         this.rootDir = rootDirectory;
-        this.apiAssigner = apiassigner;
+        this.apiHandler = apiHandler;
     }
-    public ConnectionHandler(Socket local_socket){
-        this(local_socket,"Static",new ApiAssigner());
+    public ConnectionHandler(Socket local_socket) {
+        this(local_socket, "Static", new ApiHandler());
     }
+
     public void run() {
         RequestInfo info = new RequestInfo();
 
@@ -48,7 +51,7 @@ public class ConnectionHandler implements Runnable {
             boolean notFound = false;
             try {
                 if(info.getRequestURL().contains("api")){
-                    returnType = apiAssigner.getByteResponse(info.getRequestURL()) ;
+                    returnType = apiHandler.getByteResponse(info.getRequestURL()) ;
                     type = "application/json";
                 } else {
                     returnType = FileSystemFile.getFileSystemFile(this.rootDir,info.getRequestURL());

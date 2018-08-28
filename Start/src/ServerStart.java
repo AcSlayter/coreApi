@@ -1,3 +1,5 @@
+import com.WebServer;
+
 import java.util.Properties;
 
 /**
@@ -31,7 +33,7 @@ public class ServerStart {
         Thread webServerTHREAD = new Thread(new WebServer(main_port,"Static"), "Thread 1");
         Thread webServerMonitorTHREAD = new Thread(new WebServer(error_port,"logs"), "Thread 1");
 
-        webServerTHREAD.start();
+
         if(!is_Debug){
             webServerMonitorTHREAD.start();
         }

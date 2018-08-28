@@ -1,6 +1,4 @@
-package exception;
-
-import java.io.IOException;
+package com.exception;
 
 /**
  * Created by aaron on 5/28/2018.

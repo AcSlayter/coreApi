@@ -1,6 +1,4 @@
-package jaxbxmltest;
-
-import jaxbxmltest.Customer;
+package com.jaxbxmltest;
 
 import java.io.File;
 import javax.xml.bind.JAXBContext;
