@@ -30,13 +30,14 @@ public class ServerStart {
 
 
 
-        Thread webServerTHREAD = new Thread(new WebServer(main_port,"Static"), "Thread 1");
+        Thread webServerTHREAD = new Thread(new WebServer(main_port,"Static", new ApiAssigner()), "Thread 1");
         Thread webServerMonitorTHREAD = new Thread(new WebServer(error_port,"logs"), "Thread 1");
 
 
         if(!is_Debug){
             webServerMonitorTHREAD.start();
         }
+        webServerTHREAD.start();
 
         while(webServerTHREAD.isAlive() || webServerMonitorTHREAD.isAlive()){
             try {
