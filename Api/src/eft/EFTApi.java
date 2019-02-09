@@ -4,6 +4,9 @@ import com.exception.InvalidApiRequestException;
 import interphase.IApi;
 import mine.com.Item;
 
+import java.io.File;
+import java.io.FilenameFilter;
+
 /**
  * Created by aaron on 2/9/2019.
  */
@@ -19,6 +22,9 @@ public class EFTApi implements IApi{
 
         if(subArray.contains("getItem")){
             return getItem(subArray.split("getItem\\?")[1]).toString().getBytes();
+        }
+        if(subArray.contains("availableItems")){
+            return getCacheFileNames().getBytes();
         }
 
         throw new InvalidApiRequestException();
@@ -38,5 +44,36 @@ public class EFTApi implements IApi{
             return split[1];
         }
         throw new InvalidApiRequestException();
+    }
+
+    private String getCacheFileNames(){
+        StringBuilder fileNames = new StringBuilder();
+        File folder = new File("Cache");
+        //Implementing FilenameFilter to retrieve only txt files
+        FilenameFilter txtFileFilter = new FilenameFilter()
+        {
+            @Override
+            public boolean accept(File dir, String name)
+            {
+                if(name.endsWith(".json"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        };
+        //Passing txtFileFilter to listFiles() method to retrieve only txt files
+        fileNames.append("{ \"fileNames\" : [");
+        File[] files = folder.listFiles(txtFileFilter);
+
+        for (File file : files)
+        {
+        }
+        fileNames.deleteCharAt(fileNames.length()-1);
+        fileNames.append(" ] }");
+        return fileNames.toString();
     }
 }
