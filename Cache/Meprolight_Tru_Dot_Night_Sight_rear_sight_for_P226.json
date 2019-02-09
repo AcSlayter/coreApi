@@ -1,0 +1,12 @@
+{
+  "Item": "/Meprolight_Tru_Dot_Night_Sight_rear_sight_for_P226",
+  "parts": {
+    "Compatibility": [
+      "/SIG_Sauer_P226R_9x19_pistol_slide",
+      "/P226_Sig_Stainless_elite_pistol_slide",
+      "/P226_Sig_Legion_full_size_pistol_slide",
+      "/P226_Axelson_tactical_Mk.25_pistol_slide",
+      "/P226_Sig_Emperor_scorpion_pistol_slide"
+    ]
+  }
+}

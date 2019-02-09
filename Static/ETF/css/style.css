@@ -1,0 +1,9 @@
+
+.main {
+    margin: auto;
+    width: 85%;
+
+    padding: 10px;
+    min-width: 300px;
+    overflow: auto;
+}
