@@ -71,6 +71,7 @@ public class EFTApi implements IApi{
 
         for (File file : files)
         {
+            fileNames.append("\"").append(file.getName().substring(0,file.getName().length()-5)).append("\"").append(",");
         }
         fileNames.deleteCharAt(fileNames.length()-1);
         fileNames.append(" ] }");
