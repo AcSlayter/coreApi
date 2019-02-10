@@ -41,7 +41,8 @@ public class EFTApi implements IApi{
     private String getItemName(String item, String s) throws InvalidApiRequestException {
         String[] split = s.split("=");
         if(split[0].contains(item)) {
-            return split[1];
+            String itemName = split[1];
+            return  itemName.split("&")[0];
         }
         throw new InvalidApiRequestException();
     }

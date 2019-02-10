@@ -1,8 +1,32 @@
 
+#explore {
+    border-style: solid;
+    border-width: 1px;
+    width : 525px;
+}
+
 .button {
-    padding: 10px;
-    min-width: 300px;
+    padding: 4px;
+    width: 400px;
     cursor: pointer;
     border-style: solid;
     border-width: 1px;
+    margin: 5px;
+}
+
+.part-header {
+    margin-left: 5px;
+}
+
+.title {
+    padding: 6px;
+    margin-left: 20px;
+}
+
+.part {
+     margin-left: 45px;
+}
+
+.search-options {
+    margin-bottom : 10px;
 }
