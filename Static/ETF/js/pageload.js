@@ -1,8 +1,16 @@
 
-var object = $("#search")[0];
-object.onkeypress  = function(){
+ $("#search")[0].onkeypress  = function(){
     getItems(this.value);
 };
+
+$(document).on("click", "div#clear-all" , function() {
+    $("#sample-view")[0].innerHTML = "";
+
+});
+
+$(document).on("click", "div.remove" , function() {
+    this.parentElement.remove()
+});
 
 function getItem (itemName, handle) {
     var url = "/api/EFT/getItem?item=" + itemName;
@@ -25,7 +33,7 @@ function updateExplorer (item) {
 }
 
 function buildItems(item) {
-    var string = addItemName(item.Item)
+    var string = addItemName(item.details.title)
     var part_keys = Object.keys(item.parts);
     for (var index=0, len=part_keys.length ; index < len ; index++ ){
         string = string + addTitle(part_keys[index]);
@@ -59,7 +67,7 @@ function getItems (filter) {
           url: "/api/EFT/availableItems.json",
           cache: false,
           success: function(data){
-                printAvalibleItems (filter, data);
+                printAvailableItems (filter, data);
           }
      });
 };
@@ -71,18 +79,24 @@ $(document).on("click", "div.button" , function() {
 });
 
 function updateView(jsonItem){
-    $("#sample-view")[0].innerHTML = jsonItem.details.title;
+     var innerHTML = AddHistory(jsonItem) + $("#sample-view")[0].innerHTML;
 
-    var innerHTML = addTitle(jsonItem.details.title);
+     $("#sample-view")[0].innerHTML = innerHTML;
+}
 
+function AddHistory(jsonItem) {
+    var innerHTML = "<div class=\"item\">"
+    innerHTML = innerHTML + addButton (jsonItem.details.title, jsonItem.Item);
+    innerHTML = innerHTML + removeButton();
     var part_keys = Object.keys(jsonItem.details);
     for (var index=0, len=part_keys.length ; index < len ; index++ ){
         if(!part_keys[index].includes("title")){
             innerHTML = innerHTML + addDetail(part_keys[index], jsonItem.details[part_keys[index]])
         }
     }
-    innerHTML = innerHTML + addButton (jsonItem.details.title, jsonItem.Item);
-     $("#sample-view")[0].innerHTML = innerHTML;
+
+    innerHTML = innerHTML + "</div>"
+    return innerHTML
 }
 
 $(document).on("click", "div.view" , function() {
@@ -90,8 +104,9 @@ $(document).on("click", "div.view" , function() {
     getItem (item , updateView)
 });
 
-function printAvalibleItems(filer, results){
-    filter = filer.toLowerCase();
+function printAvailableItems(filer, results){
+    filer = filer.toLowerCase();
+
     var domHtmlResults = $("#results")[0];
     domHtmlResults.style.display = "block";
     domHtmlResults.innerHTML = "";
@@ -115,6 +130,10 @@ function printAvalibleItems(filer, results){
 
 function addButton (text, id) {
     return "<div class=\"button\" id=\""+ id +"\">" + text +"</div>";
+}
+
+function removeButton () {
+        return "<div class=\"remove\"> Remove</div>";
 }
 
 //$( document ).ready(function() {
