@@ -36,9 +36,7 @@
           <root url="jar://$MODULE_DIR$/../lib/EFT.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/../lib/EFT.jar!/" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
   </component>

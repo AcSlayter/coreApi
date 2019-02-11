@@ -5,6 +5,13 @@
     width : 525px;
 }
 
+#sample-view {
+    border-style: solid;
+    border-width: 1px;
+    width : 525px;
+    border-color: green;
+}
+
 .button {
     padding: 4px;
     width: 400px;
@@ -12,6 +19,17 @@
     border-style: solid;
     border-width: 1px;
     margin: 5px;
+}
+
+
+.view {
+    padding: 4px;
+    width: 400px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    margin: 5px;
+    border-color: red;
 }
 
 .part-header {

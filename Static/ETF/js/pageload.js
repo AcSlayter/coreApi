@@ -1,11 +1,10 @@
 
 var object = $("#search")[0];
 object.onkeypress  = function(){
-    console.log(this.value);
     getItems(this.value);
 };
 
-function getItem (itemName) {
+function getItem (itemName, handle) {
     var url = "/api/EFT/getItem?item=" + itemName;
     console.log(url);
 
@@ -14,19 +13,18 @@ function getItem (itemName) {
           url: url,
           cache: false,
           success: function(data){
-               updateExplorer(data);
+               handle(data);
           }
      });
 };
 
 function updateExplorer (item) {
+   updateView(item);
    var htmlStuff = buildItems(item);
    $("#explore")[0].innerHTML = htmlStuff;
 }
 
 function buildItems(item) {
-    console.log(item);
-
     var string = addItemName(item.Item)
     var part_keys = Object.keys(item.parts);
     for (var index=0, len=part_keys.length ; index < len ; index++ ){
@@ -47,8 +45,12 @@ function addTitle(section){
     return "<div class=\"title\">" +  section + "</div>";
 }
 
+function addDetail(key, value){
+    return "<div class=\"detail\">" +  key + " = " + value + "</div>";
+}
+
 function addPart(part){
-    return  "<div id=\""+ part + "\" class=\"part button\">" + part + "</div>";
+    return  "<div id=\""+ part + "\" class=\"part view\">" + part + "</div>";
 }
 
 function getItems (filter) {
@@ -62,9 +64,30 @@ function getItems (filter) {
      });
 };
 $(document).on("click", "div.button" , function() {
-    $("#results")[0].style.display = "none";
+       $("#results")[0].style.display = "none";
+       var item = this.getAttribute("id")
+       getItem (item , updateExplorer);
+
+});
+
+function updateView(jsonItem){
+    $("#sample-view")[0].innerHTML = jsonItem.details.title;
+
+    var innerHTML = addTitle(jsonItem.details.title);
+
+    var part_keys = Object.keys(jsonItem.details);
+    for (var index=0, len=part_keys.length ; index < len ; index++ ){
+        if(!part_keys[index].includes("title")){
+            innerHTML = innerHTML + addDetail(part_keys[index], jsonItem.details[part_keys[index]])
+        }
+    }
+    innerHTML = innerHTML + addButton (jsonItem.details.title, jsonItem.Item);
+     $("#sample-view")[0].innerHTML = innerHTML;
+}
+
+$(document).on("click", "div.view" , function() {
     var item = this.getAttribute("id")
-    getItem (item);
+    getItem (item , updateView)
 });
 
 function printAvalibleItems(filer, results){
@@ -94,6 +117,6 @@ function addButton (text, id) {
     return "<div class=\"button\" id=\""+ id +"\">" + text +"</div>";
 }
 
-$( document ).ready(function() {
-    console.log('test');
-});
+//$( document ).ready(function() {
+//    console.log('test');
+//});
