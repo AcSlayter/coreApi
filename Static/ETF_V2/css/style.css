@@ -1,0 +1,120 @@
+
+#explore {
+    border-style: solid;
+    border-width: 1px;
+    width : 525px;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.history {
+    margin-right : 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+    float: left;
+}
+
+.clear-history-button {
+    padding-left : 5px;
+    padding-right : 5px;
+    margin : 5px;
+    width : 375px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.hist-nav{
+    margin: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+}
+
+.header {
+    width : 100%;
+    margin-bottom : 10px;
+    display: inline-block;
+}
+
+.item {
+    border-style: solid;
+    border-width: 1px;
+    border-color: green;
+    margin-bottom: 20px;
+}
+
+.detail {
+    padding-left : 40px;
+    padding-bottom: 2px;
+}
+
+.button {
+    padding: 4px;
+    width: 400px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    margin: 5px;
+    margin-left: 20px;
+    float : left;
+}
+
+
+.view {
+    padding: 4px;
+    width: 400px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    margin: 5px;
+    border-color: blue;
+}
+
+.part-header {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.title {
+    padding: 6px;
+    margin-left: 20px;
+}
+
+.part {
+     margin-left: 45px;
+}
+
+.search-options {
+    float: left;
+    width : 525px;
+}
+
+.search-bar {
+    width : 300px;
+}
+
+.reset {
+    border-style: solid;
+    border-width: 1px;
+    border-color : red;
+    width : 75px;
+    float : left;
+    cursor: pointer;
+    padding-left : 5px;
+    margin-left : 20px;
+}
+
+.remove {
+    padding: 4px;
+    width: 60px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+    margin: 5px;
+    margin-left: 20px;
+    float : left;
+}
