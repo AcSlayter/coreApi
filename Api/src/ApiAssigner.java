@@ -1,6 +1,7 @@
 import com.ApiHandler;
 import com.exception.*;
 import eft.EFTApi;
+import eft2.EFT2Api;
 import factorio.FactorioApi;
 import interphase.IApi;
 import munchkin.MunchkinApi;
@@ -13,6 +14,7 @@ public class ApiAssigner extends ApiHandler {
     private FactorioApi factorioApi;
     private MunchkinApi munchkinApi;
     private EFTApi eftApi;
+    private EFT2Api eft2Api;
 
     private OxygenNotIncludedApi oxygenNotIncludedApi;
 
@@ -21,6 +23,7 @@ public class ApiAssigner extends ApiHandler {
         this.factorioApi  =  new FactorioApi();
         this.munchkinApi = new MunchkinApi();
         this.eftApi = new EFTApi();
+        this.eft2Api = new EFT2Api();
         this.oxygenNotIncludedApi = new OxygenNotIncludedApi();
     }
 
@@ -34,6 +37,7 @@ public class ApiAssigner extends ApiHandler {
             case FactorioApi.NAME : return this.factorioApi;
             case MunchkinApi.NAME : return this.munchkinApi;
             case EFTApi.NAME : return this.eftApi;
+            case EFT2Api.NAME : return this.eft2Api;
             case OxygenNotIncludedApi.NAME : return this.oxygenNotIncludedApi;
         }
         throw new ApiNotFoundException(apiName);

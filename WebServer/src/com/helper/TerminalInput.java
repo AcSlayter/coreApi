@@ -24,7 +24,7 @@ public class TerminalInput implements Runnable{
                 this.alive = false;
                 System.out.println("Command complete : " + consoleInput);
             } else {
-                System.out.println("invalid command : " + consoleInput);
+                System.out.println("invalid command (kill): " + consoleInput);
             }
         }
 
