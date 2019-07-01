@@ -30,11 +30,9 @@ public class GetETFAPI {
                     (conn.getInputStream())));
 
             String output;
-            System.out.println("Output from Server .... \n");
             StringBuilder stringBuilder = new StringBuilder();
             while ((output = br.readLine()) != null) {
                 stringBuilder.append(output);
-                System.out.println(output);
             }
 
             conn.disconnect();
