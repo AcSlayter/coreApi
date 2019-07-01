@@ -1,120 +1,87 @@
-
-#explore {
+.box{
     border-style: solid;
     border-width: 1px;
-    width : 525px;
-    float: left;
-    margin-bottom: 10px;
-    margin-right: 20px;
 }
 
-.history {
-    margin-right : 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: red;
-    float: left;
-}
-
-.clear-history-button {
-    padding-left : 5px;
-    padding-right : 5px;
-    margin : 5px;
-    width : 375px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-}
-
-.hist-nav{
-    margin: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}
-
-.header {
-    width : 100%;
-    margin-bottom : 10px;
-    display: inline-block;
-}
-
-.item {
-    border-style: solid;
-    border-width: 1px;
-    border-color: green;
-    margin-bottom: 20px;
-}
-
-.detail {
-    padding-left : 40px;
-    padding-bottom: 2px;
-}
-
-.button {
-    padding: 4px;
-    width: 400px;
-    cursor: pointer;
-    border-style: solid;
-    border-width: 1px;
-    margin: 5px;
-    margin-left: 20px;
+.header-box {
+    min-width : 275px;
+    margin-left : 20px;
+    margin-right : 20px;
     float : left;
-}
-
-
-.view {
-    padding: 4px;
-    width: 400px;
-    cursor: pointer;
-    border-style: solid;
-    border-width: 1px;
-    margin: 5px;
-    border-color: blue;
-}
-
-.part-header {
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-bottom :20px;
 }
 
 .title {
-    padding: 6px;
-    margin-left: 20px;
+   font-size: 25px;
+   text-align: center;
+   padding-top : 20px;
+   padding-bottom : 20px;
+   width : 400px;
 }
 
-.part {
-     margin-left: 45px;
+.details {
+    font-weight: bold;
 }
 
-.search-options {
+.details .details {
+    font-weight: normal;
+    float : right
+}
+
+.details-box {
+    height  : auto;
+    padding : 4px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.header{
+    padding : 10px;
+    width : 1100px;
+    margin: 0 auto;
+}
+
+.main{
+    margin: 0 auto;
+    padding : 10px;
+    width : 1150px;
+}
+
+.slot{
+    border-style: solid;
+    border-width: 1px;
     float: left;
-    width : 525px;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    padding :20px
 }
 
-.search-bar {
-    width : 300px;
+.slot-title{
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid blue;
+    margin-bottom: 15px
 }
 
-.reset {
-    border-style: solid;
-    border-width: 1px;
-    border-color : red;
-    width : 75px;
-    float : left;
-    cursor: pointer;
-    padding-left : 5px;
-    margin-left : 20px;
+.my-button {
+    border: 1px solid green;
+    padding : 2px;
+    margin-top : 3px;
 }
 
-.remove {
+.on-hover {
+    display: none;
+    position: absolute;
+    background-color: white;
+
+    height: auto;
     padding: 4px;
-    width: 60px;
-    cursor: pointer;
     border-style: solid;
     border-width: 1px;
-    border-color: red;
-    margin: 5px;
+    min-width: 275px;
     margin-left: 20px;
-    float : left;
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 20px
 }

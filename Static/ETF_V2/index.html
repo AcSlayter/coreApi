@@ -13,25 +13,38 @@
     </script>
 
 </head>
+
 <body>
+    <!--<div class="box" id="search">-->
+        <!--search-->
+    <!--</div>-->
+    <!--<div class="box" id="details">-->
+        <!--details-->
+    <!--</div>-->
     <div class="header">
-        <div class="search-options">
-            Search : <input id="search" class="search-bar" type="text">
-            <br>
-            <div id="results"></div>
+        <div class="header-box title" id="title">Title</div>
+        <div class="header-box details-box">
+            <div class="details"> accuracy : <div class="details" id="accuracy"> accuracy </div> </div>
+            <div class="details"> ergonomics : <div class="details" id="ergonomics"> ergonomics </div> </div>
+            <div class="details"> recoil : <div class="details" id="recoil"> recoil </div> </div>
+            <div class="details"> soldBy : <div class="details" id="soldBy"> soldBy </div> </div>
         </div>
-    </div>
-
-    <div class="history" id="history-bar">
-        <div id="clear-history" class="clear-history-button" > clear </div>
-    </div>
-
-    <div id="explore">
-        <div class="part-header">
-
+        <div class="header-box details-box">
+            <div class="details"> Total accuracy : <div class="details" id="total-accuracy"> accuracy </div> </div>
+            <div class="details"> Total ergonomics : <div class="details" id="total-ergonomics"> ergonomics </div> </div>
+            <div class="details"> Total recoil : <div class="details" id="total-recoil"> recoil </div> </div>
+            <div class="details"> Total soldBy : <div class="details" id="total-soldBy"> soldBy </div> </div>
         </div>
-    </div>
 
+    </div>
+    <div class="main" id="main"></div>
+
+    <div class="on-hover" id="tmp-details">
+        <div class="details"> accuracy : <div class="details" id="tmp-accuracy"> accuracy </div> </div>
+        <div class="details"> ergonomics : <div class="details" id="tmp-ergonomics"> ergonomics </div> </div>
+        <div class="details"> recoil : <div class="details" id="tmp-recoil"> recoil </div> </div>
+        <div class="details"> soldBy : <div class="details" id="tmp-soldBy"> soldBy </div> </div>
+    </div>
 </body>
 
 <script src="js/pageload.js"></script>

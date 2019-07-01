@@ -19,13 +19,19 @@ public class EFT2Api implements IApi{
     public byte[] getByteResponse(String requestURL) throws InvalidApiRequestException {
         String subArray = getSubArray(requestURL, NAME);
 
+        String itemName = subArray.split("/")[subArray.split("/").length - 1];
+        itemName = itemName.split("\\?")[0];
         if(subArray.contains("item/details")){
             GetETFAPI getETFAPI = new GetETFAPI("/etf/item/details?name=");
-            String results = getETFAPI.getPublicJson(subArray.split("/")[subArray.split("/").length - 1]);
+            String results = getETFAPI.getPublicJson(itemName);
+            return results.getBytes();
+        } else if (subArray.contains("item/slots")){
+            GetETFAPI getETFAPI = new GetETFAPI("/etf/item/slots?name=");
+            String results = getETFAPI.getPublicJson(itemName);
             return results.getBytes();
         } else if (subArray.contains("item")){
             GetETFAPI getETFAPI = new GetETFAPI("/etf/item?name=");
-            String results = getETFAPI.getPublicJson(subArray.split("/")[subArray.split("/").length - 1]);
+            String results = getETFAPI.getPublicJson(itemName);
             return results.getBytes();
         }
 
