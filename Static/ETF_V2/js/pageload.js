@@ -2,7 +2,6 @@ var key = "MP-133_12ga_shotgun";
 
 function setMainItem (key) {
      var ajax_url = "/api/EFT2/item/details/" + cleanKey(key);
-     console.log(ajax_url);
      $.ajax({
           dataType: 'json',
           url: ajax_url,
@@ -54,7 +53,6 @@ function addItemSlotBox(itemTitle){
 
 function setTmpItem (key) {
      var ajax_url = "/api/EFT2/item/details/" + cleanKey(key);
-     console.log(ajax_url);
      $.ajax({
           dataType: 'json',
           url: ajax_url,
@@ -64,14 +62,20 @@ function setTmpItem (key) {
              document.getElementById("tmp-accuracy").innerHTML  = data.accuracy;
              document.getElementById("tmp-recoil").innerHTML  = data.recoil;
              document.getElementById("tmp-soldBy").innerHTML  = data.soldBy;
+             document.getElementById("tmp-slotCount").innerHTML  = data.slotCount;
           }
      });
 };
 
-function test(key){
+function hide(){
+    var tmpDetails = document.getElementById("tmp-details");
+     tmpDetails.style.display = "none";
+}
+
+function showItemDetails(key){
     var x = event.clientX;     // Get the horizontal coordinate
     var y = event.clientY
-    console.log(key + " x:" + x + " y:" + y);
+
     var tmpDetails = document.getElementById("tmp-details");
 
     var doc = document.documentElement;
@@ -83,13 +87,12 @@ function test(key){
     tmpDetails.style.display = "block";
 
     setTmpItem (key)
-
 }
 
-function clear(){
-    var tmpDetails = document.getElementById("tmp-details");
-    tmpDetails.style.display = "none";
-    console.log("clear");
+function selector(element){
+    element.style.border = "thick solid black"
+    getMainItemSlots (element.getAttribute("id") )
+    console.log(element.getAttribute("id"));
 }
 
 function addOption(slot, key){
@@ -100,16 +103,16 @@ function addOption(slot, key){
     attClass.value = "my-button";
 
     var attMouseEnter = document.createAttribute("onmouseenter");
-    attMouseEnter.value = "test(\"" + key + "\")";
+    attMouseEnter.value = "showItemDetails(\"" + key + "\")";
 
-    var attMouseOut = document.createAttribute("onmouseleave");
-    attMouseOut.value = "clear()";
+    var onClick = document.createAttribute("onClick");
+    onClick.value = "selector(this)";
 
     var newDiv = document.createElement("div");
     newDiv.setAttributeNode(attId);
     newDiv.setAttributeNode(attClass);
-    newDiv.setAttributeNode(attMouseOut);
     newDiv.setAttributeNode(attMouseEnter);
+    newDiv.setAttributeNode(onClick);
 
     getTitleFromKey(newDiv , key)
 
@@ -119,7 +122,6 @@ function addOption(slot, key){
 
 function getTitleFromKey(element , key){
     var ajax_url = "/api/EFT2/item/details/" + cleanKey(key);
-    console.log(ajax_url);
     $.ajax({
         dataType: 'json',
         url: ajax_url,
@@ -132,7 +134,6 @@ function getTitleFromKey(element , key){
 
 function getMainItemSlots (key) {
      var ajax_url = "/api/EFT2/item/slots/" + cleanKey(key);
-     console.log(ajax_url);
      $.ajax({
           dataType: 'json',
           url: ajax_url,
