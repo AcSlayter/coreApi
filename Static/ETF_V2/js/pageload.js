@@ -28,25 +28,19 @@ function getSlotTitle(slotTitle){
     return newDiv
 }
 
-function getSlotOptions(slotTitle){
-    var newDiv = document.createElement("div");
-    var attId = document.createAttribute("id");
-    attId.value = slotTitle;
 
-    newDiv.setAttributeNode(attId);
-
-    return newDiv;
-}
-
-function addItemSlotBox(itemTitle){
+function addItemSlotBox(itemTitle, key){
     var newDiv = document.createElement("div");
 
     var attClass = document.createAttribute("class");
     attClass.value = "slot";
 
+    var attId = document.createAttribute("id");
+    attId.value = key+"-"+itemTitle;
+
     newDiv.setAttributeNode(attClass);
+    newDiv.setAttributeNode(attId);
     newDiv.appendChild(getSlotTitle(itemTitle));
-    newDiv.appendChild(getSlotOptions(itemTitle));
 
     document.getElementById("main").appendChild(newDiv);
 }
@@ -95,15 +89,15 @@ function selector(element){
     console.log(element.getAttribute("id"));
 }
 
-function addOption(slot, key){
+function addOption(itemKey , slotType, attachment){
     var attId = document.createAttribute("id");
-    attId.value = key;
+    attId.value = attachment;
 
     var attClass = document.createAttribute("class");
     attClass.value = "my-button";
 
     var attMouseEnter = document.createAttribute("onmouseenter");
-    attMouseEnter.value = "showItemDetails(\"" + key + "\")";
+    attMouseEnter.value = "showItemDetails(\"" + attachment + "\")";
 
     var onClick = document.createAttribute("onClick");
     onClick.value = "selector(this)";
@@ -114,9 +108,10 @@ function addOption(slot, key){
     newDiv.setAttributeNode(attMouseEnter);
     newDiv.setAttributeNode(onClick);
 
-    getTitleFromKey(newDiv , key)
+    getTitleFromKey(newDiv , attachment)
 
-    var custom_slot =  document.getElementById(slot);
+    var id = itemKey + "-" + slotType;
+    var custom_slot =  document.getElementById(id);
     custom_slot.appendChild(newDiv);
 }
 
@@ -141,10 +136,11 @@ function getMainItemSlots (key) {
           success: function(data){
             var dataKeys = Object.keys(data);
             for(var i = 0, length = dataKeys.length ; i < length; i++) {
-                addItemSlotBox(dataKeys[i]);
+                addItemSlotBox(dataKeys[i], cleanKey(key));
                 var options = data[dataKeys[i]];
                  for(var j = 0, length2 = options.length ; j < length2; j++) {
-                    addOption(dataKeys[i], options[j]);
+                    console.log(cleanKey(key) + " --- " + dataKeys[i] + " --- " + options[j]);
+                    addOption( cleanKey(key) , dataKeys[i] , options[j] );
                  }
             }
           }
