@@ -1,4 +1,5 @@
-var key = "MP-133_12ga_shotgun";
+var key = "M4A1";
+key = "M4A1";
 
 function setMainItem (key) {
      var ajax_url = "/api/EFT2/item/details/" + cleanKey(key);
