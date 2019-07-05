@@ -1,5 +1,3 @@
-var key = "M4A1";
-key = "M4A1";
 
 function setMainItem (key) {
      var ajax_url = "/api/EFT2/item/details/" + cleanKey(key);
@@ -151,11 +149,3 @@ function getMainItemSlots (key) {
 function cleanKey(key){
     return key.replace("/", "%2F")
 }
-
-$( document ).ready(function() {
-    console.log( "ready!" );
-    setMainItem(key);
-    getMainItemSlots(key);
-
-});
-

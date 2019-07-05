@@ -15,14 +15,8 @@
 </head>
 
 <body>
-    <!--<div class="box" id="search">-->
-        <!--search-->
-    <!--</div>-->
-    <!--<div class="box" id="details">-->
-        <!--details-->
-    <!--</div>-->
     <div class="header">
-        <div class="header-box title" id="title" onmouseleave="clear(this)">Title</div>
+        <div class="header-box title" id="title"><input id="key-value" type="text" name="fname" onchange="test()"><br></div>
         <div class="header-box details-box">
             <div class="details"> accuracy : <div class="details" id="accuracy"> accuracy </div> </div>
             <div class="details"> ergonomics : <div class="details" id="ergonomics"> ergonomics </div> </div>
@@ -53,11 +47,15 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <script>
-$( document ).ready(function() {
-    var key = "Colt_M4A1_5.56x45_Assault_Rifle"
+function test(){
+    var mykey = document.getElementById("key-value").value;
     console.log( "ready!" );
-    setMainItem(key);
-    getMainItemSlots(key);
+    setMainItem(mykey);
+    getMainItemSlots(mykey);
+}
+$( document ).ready(function() {
+
+
 
 });
 </script>
