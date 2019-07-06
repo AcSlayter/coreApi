@@ -29,7 +29,11 @@ public class EFT2Api implements IApi{
             GetETFAPI getETFAPI = new GetETFAPI("/etf/item/slots?name=");
             String results = getETFAPI.getPublicJson(itemName);
             return results.getBytes();
-        } else if (subArray.contains("item")){
+        }else if (subArray.contains("item/all")){
+            GetETFAPI getETFAPI = new GetETFAPI("/etf/item/all");
+            String results = getETFAPI.getPublicJson();
+            return results.getBytes();
+        } else if (subArray.contains("item")) {
             GetETFAPI getETFAPI = new GetETFAPI("/etf/item?name=");
             String results = getETFAPI.getPublicJson(itemName);
             return results.getBytes();
