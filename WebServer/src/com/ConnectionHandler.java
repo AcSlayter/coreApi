@@ -16,7 +16,7 @@ public class ConnectionHandler implements Runnable {
     private final Socket socket;
     private String rootDir;
     private ApiHandler apiHandler;
-    private LOGGER logger = new LOGGER("logs/Error.csv", false);
+    private LOGGER logger = new LOGGER("logs/Error.log", false);
 
     public ConnectionHandler(Socket local_socket, String rootDirectory,ApiHandler apiHandler){
         this.socket = local_socket;
