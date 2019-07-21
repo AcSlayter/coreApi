@@ -7,7 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class GetETFAPI {
-    private String MYURL = "http://jenkins.ac-local.com:2846";
+    private String MYURL = "http://etfapi.ac-local.com:2846";
     private String endpoint;
 
     public GetETFAPI(String endpoint) {
@@ -16,7 +16,7 @@ public class GetETFAPI {
 
     public String getPublicJson(String itemName){
         try {
-            URL url = new URL("http://jenkins.ac-local.com:2846".concat(this.endpoint).concat(itemName));
+            URL url = new URL(MYURL.concat(this.endpoint).concat(itemName));
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
@@ -46,7 +46,7 @@ public class GetETFAPI {
 
     public String getPublicJson(){
         try {
-            URL url = new URL("http://jenkins.ac-local.com:2846".concat(this.endpoint));
+            URL url = new URL(MYURL.concat(this.endpoint));
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
