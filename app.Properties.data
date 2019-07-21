@@ -3,3 +3,5 @@
 DEBUG=true
 EPORT=2020
 MPORT=8080
+ETFAPIHOST=http://etfapi.ac-local.com
+ETFAPIPORT=2846

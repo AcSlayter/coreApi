@@ -28,13 +28,15 @@ public class GetETFAPI {
         try {
             String host = config.getProperty(Config.ETFAPIHOST);
             String port = config.getProperty(Config.ETFAPIPORT);
-            return host + ":" + port;
+            if(host != null || port != null) {
+                return host + ":" + port;
+            }
         } catch (Exception e) {
-            return "http://jenkins.ac-local.com:2846";
+
         }
 
-
-        //http://etfapi.ac-local.com:2846/
+        return "http://jenkins.ac-local.com:2846";
+        //
 
     }
 
