@@ -1,4 +1,5 @@
 import com.WebServer;
+import com.config.Config;
 
 import java.util.Properties;
 
@@ -7,10 +8,6 @@ import java.util.Properties;
  */
 
 public class ServerStart {
-    public static final String MAIN_PORT = "MPORT";
-    public static final String ERROR_PORT = "EPORT";
-    public static final String IS_DEBUG = "DEBUG";
-
 
     public static void main(String[] args) {
         Properties config = new Properties();
@@ -18,15 +15,13 @@ public class ServerStart {
         try {
             config = Config.getProperties();
         } catch (Exception e) {
-            config.setProperty(ServerStart.MAIN_PORT, "8080");
-            config.setProperty(ServerStart.ERROR_PORT, "2020");
-            config.setProperty(ServerStart.IS_DEBUG, "true");
+            config.putAll(Config.getDefaults());
             Config.SaveData(config);
         }
 
-        int main_port = Integer.parseInt(config.getProperty(MAIN_PORT));
-        int error_port = Integer.parseInt(config.getProperty(ERROR_PORT));
-        Boolean is_Debug = Boolean.parseBoolean(config.getProperty(IS_DEBUG));
+        int main_port = Integer.parseInt(config.getProperty(Config.MAIN_PORT));
+        int error_port = Integer.parseInt(config.getProperty(Config.ERROR_PORT));
+        Boolean is_Debug = Boolean.parseBoolean(config.getProperty(Config.IS_DEBUG));
 
 
 
