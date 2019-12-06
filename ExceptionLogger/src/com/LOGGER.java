@@ -44,4 +44,18 @@ public class LOGGER {
         log(e,null);
     }
 
+    public void log(String concat) {
+        StringBuilder log = new StringBuilder();
+        log = log.append("success=true").append(", ");
+        if(concat != null){
+            log = log.append("additionalInfo=").append(concat);
+        }
+
+        if(printToConsole) {
+            System.out.println(log.toString());
+        }
+        if(printToFile){
+            FileSystemFile.writeLogFile(file_location,log.toString());
+        }
+    }
 }

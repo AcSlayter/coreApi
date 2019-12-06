@@ -17,6 +17,7 @@ public class ConnectionHandler implements Runnable {
     private String rootDir;
     private ApiHandler apiHandler;
     private LOGGER logger = new LOGGER("logs/Error.log", false);
+    private LOGGER sucLogger = new LOGGER("logs/Success.log", true);
 
     public ConnectionHandler(Socket local_socket, String rootDirectory,ApiHandler apiHandler){
         this.socket = local_socket;
@@ -57,6 +58,7 @@ public class ConnectionHandler implements Runnable {
                     returnType = FileSystemFile.getFileSystemFile(this.rootDir,info.getRequestURL());
                 }
                 socket.getRemoteSocketAddress();
+                sucLogger.log(info.getRequestURL().concat(", remoteSocket=").concat(this.socket.getRemoteSocketAddress().toString()) );
             } catch (Exception e) {
                 notFound = true;
                 logger.log(e,info.getRequestURL().concat(", remoteSocket=").concat(this.socket.getRemoteSocketAddress().toString()));

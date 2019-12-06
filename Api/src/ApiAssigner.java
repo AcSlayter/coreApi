@@ -3,6 +3,7 @@ import com.exception.*;
 import eft.EFTApi;
 import eft2.EFT2Api;
 import factorio.FactorioApi;
+import guildwars.GuildWarsApi;
 import interphase.IApi;
 import munchkin.MunchkinApi;
 import oxygennotincluded.OxygenNotIncludedApi;
@@ -15,6 +16,7 @@ public class ApiAssigner extends ApiHandler {
     private MunchkinApi munchkinApi;
     private EFTApi eftApi;
     private EFT2Api eft2Api;
+    private GuildWarsApi guildWarsApi;
 
     private OxygenNotIncludedApi oxygenNotIncludedApi;
 
@@ -24,6 +26,7 @@ public class ApiAssigner extends ApiHandler {
         this.munchkinApi = new MunchkinApi();
         this.eftApi = new EFTApi();
         this.eft2Api = new EFT2Api();
+        this.guildWarsApi = new GuildWarsApi();
         this.oxygenNotIncludedApi = new OxygenNotIncludedApi();
     }
 
@@ -39,6 +42,7 @@ public class ApiAssigner extends ApiHandler {
             case EFTApi.NAME : return this.eftApi;
             case EFT2Api.NAME : return this.eft2Api;
             case OxygenNotIncludedApi.NAME : return this.oxygenNotIncludedApi;
+            case GuildWarsApi.NAME : return this.guildWarsApi;
         }
         throw new ApiNotFoundException(apiName);
     }
